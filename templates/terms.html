@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الاستخدام - نظام تشخيص أمراض الجلد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      /* تنسيقات عامة مشتركة */
+      :root {
+          --primary-color: #2A5C82;
+          --secondary-color: #5DA2D1;
+          --text-color: #333;
+          --background: #f5f7fa;
+          --white: #fff;
+          --warning-color: #FFE08A;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        align-content: center;
+        list-style-type: none;
+        list-style: none;
+
+        font-family: 'Times New Roman', Times, serif;
+      }
+      
+      body {
+        background-color: #00ffff;
+        color: #0b0101;
+        padding-top: 60px;
+        padding-left: 10px;
+        width: 98%;
+        text-align: center;
+        align-content: center;
+        direction: rtl;
+        list-style-type:none;
+      }
+      
+      html, body {
+          height: 100%; /* ضمان أن الصفحة تغطي كامل الشاشة */
+          display: flex;
+          flex-direction: column;
+          
+      }
+      
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: darkcyan;
+        padding: 10px;
+        z-index: 1000;
+        border-bottom: 1px solid #ddd;
+        flex-direction: row;
+      }
+      
+      .menu-icon span {
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      
+      .menu-icon .hhh {
+        position: fixed;
+        left:40%;
+      }
+      
+      
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 30px;
+        left: 0;
+        background-color: darkcyan;
+        overflow-x: hidden;
+        transition: 0.5s ease;
+        padding-top: 40px;
+      }
+      
+      .sidebar a {
+        background-color: #f5f5f5;
+        display: block;
+        margin:30px 50px;
+        padding: 20px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        transition: 0.3s ease;
+        border-radius: 10px;
+      }
+      
+      
+      .sidebar a:hover {
+        background-color: #575757;
+      }
+
+      /* تنسيقات خاصة بصفحة الشروط */
+      .legal-page {
+          max-width: 1200px;
+          margin: 50px auto;
+          padding: 0 20px;
+      }
+
+      .breadcrumb {
+          color: var(--primary-color);
+          margin-bottom: 30px;
+          font-size: 0.9em;
+      }
+
+      .breadcrumb a {
+          color: var(--secondary-color);
+          text-decoration: none;
+      }
+
+      article {
+          background: var(--white);
+          padding: 40px;
+          border-radius: 15px;
+          box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      }
+
+      h1 {
+          color: var(--primary-color);
+          font-size: 2.2em;
+          margin-bottom: 20px;
+      }
+
+      h1 i {
+          margin-left: 10px;
+      }
+
+      .update-date {
+          color: #666;
+          font-size: 0.9em;
+          margin-bottom: 40px;
+          display: block;
+      }
+
+      section {
+          margin-bottom: 40px;
+          border-bottom: 1px solid #eee;
+          padding-bottom: 30px;
+      }
+
+      h2 {
+          color: var(--primary-color);
+          font-size: 1.6em;
+          margin-bottom: 15px;
+      }
+
+      ul {
+          list-style-type: none;
+          list-style: none;
+          padding:0;
+          margin:0;
+
+      }
+
+      li {
+        list-style-type: none;
+        margin-bottom: 12px;
+        position: relative;
+        list-style: none;
+        padding:0;
+        margin:0;
+      }
+
+      li:before {
+          content: "•";
+          color: var(--secondary-color);
+          position: absolute;
+          list-style-type: none;
+          right: -15px;
+      }
+
+      .warning {
+          background: var(--warning-color);
+          padding: 25px;
+          border-radius: 10px;
+          border-right: 4px solid #FFC107;
+          margin-top: 30px;
+      }
+
+      .warning h3 {
+          color: #856404;
+          margin-bottom: 15px;
+      }
+
+      .warning i {
+          color: #FFC107;
+          margin-left: 10px;
+      }
+
+      /* التجاوب مع الشاشات الصغيرة */
+      @media (max-width: 768px) {
+          .legal-page {
+              margin: 30px auto;
+          }
+
+          article {
+              padding: 25px;
+          }
+
+          h1 {
+              font-size: 1.8em;
+          }
+
+          h2 {
+              font-size: 1.4em;
+          }
+
+          .warning {
+              padding: 20px;
+          }
+      }
+  </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="openNav()">
+                <span>&#9776;</span>
+                <span class="hhh">Terms</span>
+            </div>
+        </nav>
+    </header>
+    
+        <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+       <a href="/" class="nav-link"><i class="fas fa-home"></i>     Home</a>
+       <a href="/diagnose"><i class="fas fa-eye"></i>     Diagnose</a>
+       <a href="/contact"><i class="fas fa-person"></i>  Contact</a>
+    </div>
+
+    <main class="legal-page">
+        <nav class="breadcrumb">
+            <a href="/">الرئيسية</a> »
+            <span>شروط الاستخدام</span>
+        </nav>
+
+        <article>
+            <h1><i class="fas fa-file-contract"></i> شروط استخدام الموقع</h1>
+            <p class="update-date">آخر تحديث: 1 يناير 2025</p>
+
+            <section>
+                <h2>1. القبول بالشروط</h2>
+                <p>باستخدامك لهذا الموقع، فإنك توافق على الالتزام بهذه الشروط والأحكام.</p>
+            </section>
+
+            <section>
+                <h2>2. طبيعة الخدمة</h2>
+                <ul>
+                    <li>الموقع يقدم تشخيصًا أوليًا باستخدام الذكاء الاصطناعي</li>
+                    <li>لا يعتبر بديلًا عن الاستشارة الطبية المتخصصة</li>
+                    <li>الدقة ليست مضمونة بنسبة 100%</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. مسؤوليات المستخدم</h2>
+                <ul>
+                    <li>تقديم معلومات دقيقة وصحيحة</li>
+                    <li>عدم استخدام النظام لأغراض غير مشروعة</li>
+                    <li>الحفاظ على سرية الحساب</li>
+                </ul>
+            </section>
+
+            <section class="warning">
+                <h3><i class="fas fa-exclamation-triangle"></i> تحذير هام</h3>
+                <p>في حالة ظهور أعراض خطيرة، يجب التوجه فورًا إلى أقرب مركز طبي.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="skin-footer">
+        <div class="footer-top">
+          <div class="footer-column">
+            <p>موقع تشخيص أمراض الجلد  </p>
+            <p class="footer-description">
+              نظام تشخيص متقدم لأمراض الجلد باستخدام الذكاء الاصطناعي
+            </p>
+          </div>
+        
+          <div class="footer-column">
+            <h4>تواصل معنا</h4>
+            <div class="social-media">
+              <a href="https://t.me/emad_aladeep" class="social-icon telegram" target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>  </span>
+              </a>
+              <a href="https://wa.me/967775914784" class="social-icon whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>  </span>
+              </a>
+              <a href="mailto:emadaladeep775@gmail.com" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+                <span>   </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="copyright">
+            © 2025 جميع الحقوق محفوظة - نظام تشخيص أمراض الجلد
+          </div>
+          <div class="legal-links">
+            <a href="/terms">شروط الاستخدام</a>
+            <a href="/terms">سياسة الخصوصية</a>
+            <a href="/contact">اتصل بنا</a>
+          </div>
+        </div>
+      </footer>
+
+      <script src="./static/main.js"></script>
+
+</body>
+</html>
+
